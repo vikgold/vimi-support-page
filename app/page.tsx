@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Mail, Slack, ArrowRight, Users } from "lucide-react"
+import { Mail, Slack, ArrowRight, Users, AlertTriangle } from "lucide-react"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import Image from "next/image"
 
 export const metadata = {
@@ -32,6 +33,15 @@ export default function SupportPage() {
 
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Warning Banner */}
+        <Alert variant="warning" className="mb-8">
+          <AlertTriangle className="h-4 w-4" />
+          <AlertTitle>Unmanaged Device</AlertTitle>
+          <AlertDescription>
+            We couldn't identify this device as a managed computer. For personalized support, please access this page from a managed device. This page only provides generic support information.
+          </AlertDescription>
+        </Alert>
+
         {/* Support Channels Grid */}
         <div className="grid md:grid-cols-2 gap-6 mb-16">
           {/* Slack Support */}
